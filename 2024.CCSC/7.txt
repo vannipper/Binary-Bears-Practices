@@ -1,0 +1,9 @@
+8
+1,ab
+1,aa
+2,aba
+2,aaa
+3,aba
+3,abc
+4,abc
+4,abbabcabbacad

@@ -1,0 +1,7 @@
+1
+2
+2
+Steve USA 59.23
+John CAN 58.95
+1
+Frank GBR 57.60
