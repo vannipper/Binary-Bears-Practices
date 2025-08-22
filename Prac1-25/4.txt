@@ -1,0 +1,10 @@
+2 trips
+Trip 1 has 4 cities.
+La Crosse, WI
+Effingham, IL
+St. Louis, MO
+Jackson, TN
+Trip 2 has 3 cities.
+Mountain Home, AR
+Rolla, MO
+Davenport, IA
