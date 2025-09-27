@@ -1,0 +1,80 @@
+Tournament 1
+  Seed 11 gets a bye.
+  Seed 30 plays seed 35.
+  Seed 48 plays seed 17.
+Tournament 2
+  Seed 3 plays seed 10.
+  Seed 4 plays seed 9.
+  Seed 5 plays seed 8.
+Tournament 3
+  Seed 1 plays seed 8.
+  Seed 2 plays seed 7.
+  Seed 8 plays seed 1.
+Tournament 4
+  Seed 1 plays seed 16.
+  Seed 8 plays seed 9.
+  Seed 16 plays seed 1.
+Tournament 5
+  Seed 1 plays seed 32.
+  Seed 17 plays seed 16.
+  Seed 32 plays seed 1.
+Tournament 6
+  Seed 1 plays seed 64.
+  Seed 63 plays seed 2.
+  Seed 64 plays seed 1.
+Tournament 7
+  Seed 1 plays seed 128.
+  Seed 3 plays seed 126.
+  Seed 128 plays seed 1.
+Tournament 8
+  Seed 1 plays seed 256.
+  Seed 4 plays seed 253.
+  Seed 256 plays seed 1.
+Tournament 9
+  Seed 1 gets a bye.
+  Seed 2 plays seed 9.
+  Seed 3 plays seed 8.
+Tournament 10
+  Seed 2 gets a bye.
+  Seed 3 plays seed 10.
+  Seed 9 plays seed 4.
+Tournament 11
+  Seed 7 gets a bye.
+  Seed 8 plays seed 15.
+  Seed 9 plays seed 14.
+Tournament 12
+  Seed 15 gets a bye.
+  Seed 16 plays seed 31.
+  Seed 30 plays seed 17.
+Tournament 13
+  Seed 1 gets a bye.
+  Seed 2 plays seed 33.
+  Seed 33 plays seed 2.
+Tournament 14
+  Seed 31 gets a bye.
+  Seed 32 plays seed 63.
+  Seed 33 plays seed 62.
+Tournament 15
+  Seed 1 gets a bye.
+  Seed 2 plays seed 65.
+  Seed 3 plays seed 64.
+Tournament 16
+  Seed 63 gets a bye.
+  Seed 64 plays seed 127.
+  Seed 65 plays seed 126.
+Tournament 17
+  Seed 1 gets a bye.
+  Seed 2 plays seed 129.
+  Seed 3 plays seed 128.
+Tournament 18
+  Seed 127 gets a bye.
+  Seed 128 plays seed 255.
+  Seed 129 plays seed 254.
+Tournament 19
+  Seed 30 gets a bye.
+  Seed 40 plays seed 97.
+  Seed 50 plays seed 87.
+Tournament 20
+  Seed 70 gets a bye.
+  Seed 80 plays seed 193.
+  Seed 90 plays seed 183.
