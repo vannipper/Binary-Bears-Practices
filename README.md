@@ -1,17 +1,17 @@
-📂 Repository Structure
+REPO STRUCTURE:
 
-Each folder corresponds to a topic, contest, or problem set.
+  Each folder corresponds to a topic, contest, or problem set.
 
-Solutions may be written in multiple languages (commonly C++ and Python).
+  Solutions may be written in multiple languages (commonly C++ and Python).
 
-Some problems include multiple approaches (brute force → optimized).
+  Some problems include multiple approaches (brute force → optimized).
 
-🚀 How to Use
+HOW TO USE:
 
-Browse the folders to find a topic or contest.
+  Browse the folders to find a topic or contest.
 
-Open the problem files to review or run solutions.
+  Open the problem files to review or run solutions.
 
-Learn from different approaches and coding styles.
+  Learn from different approaches and coding styles.
 
-Contribute improvements, alternate solutions, or comments.
+  Contribute improvements, alternate solutions, or comments.
