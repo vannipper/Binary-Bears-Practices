@@ -5,58 +5,80 @@ from time import sleep
 ScreenResX, ScreenResY = 10, 20
 pieceTypes = ['O', 'I', 'S', 'Z', 'L', 'J', 'T']
 
-red = '\033[41m'
-blue = '\033[44m'
-yellow = '\033[43m'
-green = '\033[42m'
-orange = '\033[45;5;208m'
-pink = '\033[48;5;213m'
-purple = '\033[45m'
-white = '\033[0m'
+RED = '\033[41m'
+BLUE = '\033[44m'
+YELLOW = '\033[43m'
+GREEN = '\033[42m'
+ORANGE = '\033[45;5;208m'
+PINK = '\033[48;5;213m'
+PURPLE = '\033[45m'
+WHITE = '\033[0m'
+
+class Square:
+    def __init__(self, locx, locy, color):
+        self.colorText = color + '  ' + WHITE
+        self.locx = locx
+        self.locy = locy
+    def __eq__(self, s):
+        return s.locx == self.locx and s.locy == self.locy
+    def fall(self):
+        self.locy -= 1
+    def restore(self):
+        self.locy += 1
 
 class Piece:
     def __init__(self):
         self.type = random.choice(pieceTypes)
         self.isMoving = True
+        self.squares = []
         self.locx = (ScreenResX - 1) // 2
         self.locy = ScreenResY - 1
-    def add_to_board(self, board):
+    def add_to_board(self):
         if self.type == 'O':
-            board[board_index(self.locx, self.locy)] = yellow + '  ' + white
-            board[board_index(self.locx + 1, self.locy)] = yellow + '  ' + white
-            board[board_index(self.locx, self.locy + 1)] = yellow + '  ' + white
-            board[board_index(self.locx + 1, self.locy + 1)] = yellow + '  ' + white
+            self.squares.append(Square(self.locx, self.locy, YELLOW))
+            self.squares.append(Square(self.locx + 1, self.locy, YELLOW))
+            self.squares.append(Square(self.locx, self.locy + 1, YELLOW))
+            self.squares.append(Square(self.locx + 1, self.locy + 1, YELLOW))
         elif self.type == 'I':
-            board[board_index(self.locx, self.locy)] = blue + '  ' + white
-            board[board_index(self.locx, self.locy + 1)] = blue + '  ' + white
-            board[board_index(self.locx, self.locy + 2)] = blue + '  ' + white
-            board[board_index(self.locx, self.locy + 3)] = blue + '  ' + white
+            self.squares.append(Square(self.locx, self.locy, BLUE))
+            self.squares.append(Square(self.locx, self.locy + 1, BLUE))
+            self.squares.append(Square(self.locx, self.locy + 2, BLUE))
+            self.squares.append(Square(self.locx, self.locy + 3, BLUE))
         elif self.type == 'S':
-            board[board_index(self.locx, self.locy)] = red + '  ' + white
-            board[board_index(self.locx + 1, self.locy)] = red + '  ' + white
-            board[board_index(self.locx + 1, self.locy + 1)] = red + '  ' + white
-            board[board_index(self.locx + 2, self.locy + 1)] = red + '  ' + white
+            self.squares.append(Square(self.locx, self.locy, RED))
+            self.squares.append(Square(self.locx + 1, self.locy, RED))
+            self.squares.append(Square(self.locx + 1, self.locy + 1, RED))
+            self.squares.append(Square(self.locx + 2, self.locy + 1, RED))
         elif self.type == 'Z':
-            board[board_index(self.locx, self.locy)] = green + '  ' + white
-            board[board_index(self.locx + 1, self.locy)] = green + '  ' + white
-            board[board_index(self.locx, self.locy + 1)] = green + '  ' + white
-            board[board_index(self.locx - 1, self.locy + 1)] = green + '  ' + white
+            self.squares.append(Square(self.locx, self.locy, GREEN))
+            self.squares.append(Square(self.locx + 1, self.locy, GREEN))
+            self.squares.append(Square(self.locx, self.locy + 1, GREEN))
+            self.squares.append(Square(self.locx - 1, self.locy + 1, GREEN))
         elif self.type == 'L':
-            board[board_index(self.locx, self.locy)] = orange + '  ' + white
-            board[board_index(self.locx + 1, self.locy)] = orange + '  ' + white
-            board[board_index(self.locx, self.locy + 1)] = orange + '  ' + white
-            board[board_index(self.locx, self.locy + 2)] = orange + '  ' + white
+            self.squares.append(Square(self.locx, self.locy, ORANGE))
+            self.squares.append(Square(self.locx + 1, self.locy, ORANGE))
+            self.squares.append(Square(self.locx, self.locy + 1, ORANGE))
+            self.squares.append(Square(self.locx, self.locy + 2, ORANGE))
         elif self.type == 'J':
-            board[board_index(self.locx, self.locy)] = pink + '  ' + white
-            board[board_index(self.locx + 1, self.locy)] = pink + '  ' + white
-            board[board_index(self.locx + 1, self.locy + 1)] = pink + '  ' + white
-            board[board_index(self.locx + 1, self.locy + 2)] = pink + '  ' + white
+            self.squares.append(Square(self.locx, self.locy, PINK))
+            self.squares.append(Square(self.locx + 1, self.locy, PINK))
+            self.squares.append(Square(self.locx + 1, self.locy + 1, PINK))
+            self.squares.append(Square(self.locx + 1, self.locy + 2, PINK))
         elif self.type == 'T':
-            board[board_index(self.locx, self.locy)] = purple + '  ' + white
-            board[board_index(self.locx, self.locy + 1)] = purple + '  ' + white
-            board[board_index(self.locx + 1, self.locy + 1)] = purple + '  ' + white
-            board[board_index(self.locx - 1, self.locy + 1)] = purple + '  ' + white
-            
+            self.squares.append(Square(self.locx, self.locy, PURPLE))
+            self.squares.append(Square(self.locx, self.locy + 1, PURPLE))
+            self.squares.append(Square(self.locx + 1, self.locy + 1, PURPLE))
+            self.squares.append(Square(self.locx - 1, self.locy + 1, PURPLE))
+    def fall(self):
+        for square in self.squares:
+            square.fall()
+    def restore(self):
+        for square in self.squares:
+            square.restore()
+
+class Board:
+    def __init__(self):
+        
 def draw_board(pieces, board): 
     clear_screen()
     for piece in pieces:
@@ -80,11 +102,15 @@ if __name__ == "__main__":
     pieces = []
     selectedPiece = None
     while isRunning:
-        board = { idx : '..' for idx in range(ScreenResX * ScreenResY)}
         if selectedPiece is None:
             selectedPiece = Piece()
             pieces.append(selectedPiece)
         else:
-            selectedPiece.locy -= 1
+            selectedPiece.fall()
+            if (selectedPiece.locy == -1):
+                if selectedPiece.locy == ScreenResY - 1:
+                    isRunning = False
+                selectedPiece = None
+        board = { idx : '..' for idx in range(ScreenResX * ScreenResY)}
         draw_board(pieces, board)
-        sleep(1)
+        sleep(0.2)
