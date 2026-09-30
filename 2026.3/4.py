@@ -1,20 +1,38 @@
-pronouns = [
-    'me',
-    'you',
-    'she',
-    'her',
-    'he',
-    'him',
-    'my',
-    'mine',
-    'your',
-    'yours',
-    'hers',
-    'his'
-]
+pronouns = {
+    'me' : 'Kanye',
+    'you' : 'Kanye',
+    'she' : 'Kanye',
+    'her' : 'Kanye',
+    'he' : 'Kanye',
+    'him' : 'Kanye',
+    'my' : 'Kanye\'s',
+    'mine' : 'Kanye\'s',
+    'your' : 'Kanye\'s',
+    'yours' : 'Kanye\'s',
+    'hers' : 'Kanye\'s',
+    'his' : 'Kanye\'s'
+}
 
 def Kanye(word: str):
-    return 'Kanye' if word.lower() in pronouns else word
+    if word.lower() in pronouns:
+        return pronouns[word.lower()]
+    else:
+        return word
 
 for _ in range(int(input())):
-    print(' '.join([Kanye(word) for word in input().split()]))
+    strmap = [c for c in input()]
+    buildString = ''
+    firstPointerIdx, secondPointerIdx = 0, 0
+    
+    for c in strmap:
+        if not c.isalnum():
+            word = ''.join(strmap[firstPointerIdx:secondPointerIdx])
+            buildString += Kanye(word) + c
+            firstPointerIdx = secondPointerIdx + 1
+        secondPointerIdx += 1
+
+    if firstPointerIdx < len(strmap):
+        word = ''.join(strmap[firstPointerIdx:])
+        buildString += Kanye(word)
+
+    print(buildString)
