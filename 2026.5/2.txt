@@ -1,0 +1,5 @@
+4
+30.5 18 Calgary, Alberta
+25.0 25 Denver, Colorado
+16.3 28 Asheville, North Carolina
+22.1 16 Syracuse, New York
